@@ -1,4 +1,7 @@
-function Data() {
-  return <h2>here</h2>;
+export default function Data() {
+  return (
+    <div>
+      <h2>here</h2>;
+    </div>
+  );
 }
-export default Data;
