@@ -1,5 +1,5 @@
 // import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Data from "./Components/data";
 
@@ -7,12 +7,13 @@ function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <BrowserRouter>
+    <>
+      <h1>THE GREAT BAKED POTATO REPOSITORY</h1>
+      <Link to="/recipes">Recipes</Link>
       <Routes>
-        <Route path="/data" element={<Data />} />
+        <Route path="/recipes" element={<Data />} />
       </Routes>
-      <h1> Trying to get API data</h1>
-    </BrowserRouter>
+    </>
   );
 }
 
