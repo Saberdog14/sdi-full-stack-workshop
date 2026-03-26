@@ -5,6 +5,10 @@ const app = express();
 
 app.get("/", (req, res) => res.status(200).send("This is the API homepage!"));
 
+app.get("/data", (req, res) =>
+  res.status(200).json({ message: "Data will go here!" }),
+);
+
 app.listen(port, () =>
   console.log(`The server is running on http://localhost:${port}`),
 );
