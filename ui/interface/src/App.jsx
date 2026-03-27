@@ -1,16 +1,23 @@
-// import { useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Data from "./Components/data";
+import Data from "./Components/Data";
+import Build from "./Components/Build";
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>THE GREAT BAKED POTATO REPOSITORY</h1>
-      <Link to="/recipes">Recipes</Link>
+      <div id="Header">
+        <h1>THE GREAT BAKED POTATO REPOSITORY</h1>
+        <div id="Links">
+          <Link to="/recipes">Recipes</Link>
+          <Link to="/build">Build a Spud</Link>
+        </div>
+      </div>
       <Routes>
+        
+        <Route path="/build" element={<Build />} />
         <Route path="/recipes" element={<Data />} />
       </Routes>
     </>
