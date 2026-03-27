@@ -18,6 +18,8 @@ app.get("/data", (req, res) =>
   res.status(200).json({ message: "Data will go here!" }),
 );
 
+// app.put("/data", (req, res));
+
 app.listen(port, () =>
   console.log(`The server is running on http://localhost:${port}`),
 );

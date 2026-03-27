@@ -9,11 +9,14 @@ function Data() {
         setSpud(data);
         console.log(data);
       });
-  });
+  }, []);
+
+  if (!spud) return <h2>Loading Taters...</h2>;
+
   return (
     <>
-      <h2>here</h2>
-      <h1>{spud}</h1>
+      <h1>Choose a Tasty Potato!</h1>
+      <div>{JSON.stringify(spud)}</div>
     </>
   );
 }
