@@ -1,0 +1,9 @@
+#Options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2);
+  gap: 5em;
+}
+#recipes {
+  background-color: rgba(171, 165, 165, 0.4);
+}

@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const db = require("./db/db");
 
 const port = 8080;
 const app = express();
@@ -14,9 +15,20 @@ app.use(cors(corsOptions));
 
 app.get("/", (req, res) => res.status(200).send("This is the API homepage!"));
 
-app.get("/data", (req, res) =>
-  res.status(200).json({ message: "Data will go here!" }),
-);
+app.get("/data", async (req, res) => {
+  try {
+    const result = await db("baked_potato")
+      .join(
+        "potato_recipes",
+        "baked_potato.id",
+        "potato_recipes.baked_potato_id",
+      )
+      .select("name", "ingredients", "instructions");
+    return res.status(200).json(result);
+  } catch (err) {
+    res.status(500).send({ message: "Server Error" });
+  }
+});
 
 // app.put("/data", (req, res));
 

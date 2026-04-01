@@ -1,3 +1,4 @@
+import "./Data.css";
 import { useEffect, useState } from "react";
 
 function Data() {
@@ -16,7 +17,17 @@ function Data() {
   return (
     <>
       <h1>Choose a Tasty Potato!</h1>
-      <div>{JSON.stringify(spud)}</div>
+      <div id="Options">
+        {spud.map((spuds) => (
+          <div id="recipes">
+            <h2>
+              <i>{spuds.name}</i>
+            </h2>
+            <h3>Ingredients: {spuds.ingredients}</h3>
+            <h3>Instructions: {spuds.instructions}</h3>
+          </div>
+        ))}
+      </div>
     </>
   );
 }
